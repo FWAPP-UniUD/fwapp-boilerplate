@@ -1,0 +1,26 @@
+{
+  "name": "fwapp-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for Fundamentals of Web Applications",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel ./index.js -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FWAPP-UniUD/fwapp-boilerplate.git"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": "Luca Di Gaspero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FWAPP-UniUD/fwapp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/FWAPP-UniUD/fwapp-boilerplate#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
