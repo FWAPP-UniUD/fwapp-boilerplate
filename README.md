@@ -18,7 +18,7 @@ to initialize the project, entering the data requested. This will create a file 
 In order to be safe in writing your code with the latest JavaScript standard and still be used in any (reasonable) browser, you have to install [babel](https://babeljs.io):
 
 ```bash
-npm install - -save-dev babel-cli babel-loader babel-preset-env
+npm install --save-dev babel-cli babel-loader babel-preset-env
 ```
 
 And add a file `.babelrc` with the following content:
