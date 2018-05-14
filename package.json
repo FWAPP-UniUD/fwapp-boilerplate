@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copy": "copyfiles -f ./index.html ./dist",
-    "build": "npm run clean & npm run copy & webpack --progress --mode development"
+    "build": "npm run clean & npm run copy & webpack --progress --mode development",
+    "serve": "http-server dist"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "copyfiles": "^2.0.0",
+    "http-server": "^0.11.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11"
