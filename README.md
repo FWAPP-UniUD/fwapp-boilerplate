@@ -45,7 +45,7 @@ You can refer to [https://babeljs.io/docs/plugins/preset-env/](https://babeljs.i
 Moreover, in order to automate bundling your code and exploiting `node` modules on the client-side you are required to install [webpack](https://webpack.js.org):
 
 ```bash
-npm install --save-dev webpack webpack-cli
+npm install --save-dev webpack webpack-cli style-loader css-loader url-loader file-loader
 ```
 
 In order to configure it, you should provide a basic `webpack.config.js` file. A possible content is like the following one:
@@ -54,13 +54,21 @@ In order to configure it, you should provide a basic `webpack.config.js` file. A
 const path = require('path');
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },
@@ -77,6 +85,8 @@ module.exports = {
 The `entry` entry indicates the entrypoint(s) of the application (in case there's more than a single entrypoint an array of filenames could be provided). The `module` indicates to use `babel-loader` to transpile all the `.js` files according to the babel configuration, but to exclude the files under the `node_modules` directory.
 
 The JavaScript code will be bundled in a file whose name is `bundle.js` you will find in the `dist` directory after the pack bundling is performed.
+
+Moreover, `css` and related kind of resources (images and fonts) are treated and bundled.
 
 ## Add a build task to `package.json`
 
