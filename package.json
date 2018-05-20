@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/*",
-    "copy": "copyfiles -f ./index.html ./dist",
+    "copy": "copyfiles -f ./src/index.html ./dist",
     "build": "npm run clean & npm run copy & webpack --progress --mode development",
     "serve": "http-server dist"
   },
@@ -27,9 +27,13 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "copyfiles": "^2.0.0",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "http-server": "^0.11.1",
     "rimraf": "^2.6.2",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11"
+    "webpack-cli": "^2.0.11"    
   }
 }
